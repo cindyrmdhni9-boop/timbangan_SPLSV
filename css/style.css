@@ -1,0 +1,84 @@
+/* ===== Variabel warna & ukuran ===== */
+:root{
+  --navy:#1e1b5e; --ink:#1d2140; --mute:#59607f;
+  --sun:#ffc233; --mint:#2fd1a3; --sky:#3d8bff; --rose:#e5484d;
+  --paper:#f5f6ff; --card:#ffffff; --line:#dfe3f5; --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Nunito",system-ui,sans-serif;line-height:1.6}
+h1,h2,h3,.logo{font-family:"Fredoka","Nunito",system-ui,sans-serif;line-height:1.2}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+
+/* ===== Navigasi ===== */
+.nav{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:1.2rem;text-decoration:none}
+.nav nav{display:flex;gap:16px;flex-wrap:wrap}
+.nav nav a{text-decoration:none;font-weight:700;font-size:.95rem;opacity:.85}
+.nav nav a:hover{opacity:1;text-decoration:underline}
+
+/* ===== Beranda ===== */
+.hero{background:linear-gradient(160deg,#1e1b5e 0%,#35319a 100%);color:#fff;padding:56px 0 64px}
+.hero-in{display:grid;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2rem,6vw,3.2rem);margin:0 0 14px;font-weight:700}
+.hero p{font-size:1.1rem;max-width:34em;color:#e4e6ff;margin:0 0 22px}
+.hero-art{width:100%;max-width:420px;justify-self:center}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;border:2px solid transparent;border-radius:999px;padding:10px 22px;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;background:var(--card);color:var(--ink);border-color:var(--line)}
+.btn.primary{background:var(--sun);color:var(--navy);border-color:var(--sun)}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.btn.small{padding:6px 14px;font-size:.92rem}
+.btn.blue{background:var(--sky);color:#fff;border-color:var(--sky)}
+.btn:hover{filter:brightness(.95)}
+
+/* ===== Bagian umum ===== */
+.sec{padding-top:56px}
+.sec h2{font-size:1.8rem;margin:0 0 6px;color:var(--navy)}
+.lead{color:var(--mute);margin:0 0 18px}
+h3{font-size:1.1rem;margin:0 0 8px;color:var(--navy)}
+
+/* ===== Aplikasi ===== */
+.app,.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:0 4px 18px rgba(30,27,94,.07)}
+.say{display:flex;gap:12px;align-items:center}
+#mas{width:84px;height:84px;flex:none}
+#mas img,#mas svg{width:100%;height:100%;object-fit:contain;display:block}
+#msg{flex:1;border:2px solid var(--line);border-radius:14px;padding:10px 14px;font-weight:700;min-height:3.4em;display:flex;align-items:center}
+#msg.ok{color:#14805a;border-color:#14805a;background:#e9fbf4}
+#msg.bad{color:#c0262c;border-color:#c0262c;background:#fff1f1}
+.eq{font-family:"Fredoka",sans-serif;font-size:2rem;font-weight:600;text-align:center;margin:10px 0 0;color:var(--navy)}
+.board{width:100%;height:auto;display:block;touch-action:none;user-select:none;-webkit-user-select:none}
+.beam,.pan{transition:transform .6s cubic-bezier(.3,1.4,.5,1)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin-top:8px}
+.hint{color:var(--mute);font-size:.88rem;text-align:center;margin:8px 0 0}
+.panels{display:grid;gap:14px;margin-top:14px}
+input[type=number],select{font:inherit;border:1px solid var(--line);border-radius:10px;padding:6px 10px;background:#fff;color:var(--ink)}
+input[type=number]{width:64px;text-align:center}
+input[type=color]{width:34px;height:30px;padding:0;border:1px solid var(--line);border-radius:8px;background:none;vertical-align:middle}
+input[type=file]{max-width:100%}
+
+/* ===== Cara pakai & materi ===== */
+.steps{display:grid;gap:14px}
+.steps article{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 16px 12px}
+.steps p{margin:0;color:var(--mute)}
+.num{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sun);color:var(--navy);font-weight:800;margin-bottom:8px}
+.two{display:grid;gap:18px}
+.ex{background:var(--navy);color:#fff;border-radius:var(--r);padding:18px}
+.ex h3{color:var(--sun)}
+.ex ol{margin:0;padding-left:20px}
+.ex li{margin:6px 0}
+footer{margin-top:64px;background:var(--navy);color:#cfd2ff;padding:18px 0;text-align:center;font-size:.9rem}
+
+/* ===== Layar lebar ===== */
+@media (min-width:820px){
+  .hero-in{grid-template-columns:1.2fr 1fr}
+  .panels{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .two{grid-template-columns:1.2fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .beam,.pan{transition:none}
+}
